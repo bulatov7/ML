@@ -6,6 +6,8 @@
 2. kmeans.py
    kmeansscreen1.png,
    kmeansscreen2.png
-3. 
+3. c_means.py
 4. dbscan.py (сдал на паре)
-5. 
+5. knp.py,
+   knp1.png,
+   knp2.png,
