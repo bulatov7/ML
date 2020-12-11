@@ -18,4 +18,5 @@
    НБА.png
 8. svm.py,
    svm.png
-9. 
+9. LR.py 
+   LR.png
