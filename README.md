@@ -10,4 +10,12 @@
 4. dbscan.py (сдал на паре)
 5. knp.py,
    knp1.png,
-   knp2.png,
+   knp2.png
+6. knn.py, 
+   knn1.png, 
+   knn2.png
+7. nba.py,
+   НБА.png
+8. svm.py,
+   svm.png
+9. 
