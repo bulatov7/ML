@@ -22,4 +22,5 @@
    LR.png
 10. 
 11. GA.py
-12. 
+12. HAAR.py
+    haar_res.png
