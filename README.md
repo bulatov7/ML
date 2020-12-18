@@ -3,9 +3,8 @@
 1. main.py,
    titanic.csv,
    снимок.png
-2. kmeans.py
-   kmeansscreen1.png,
-   kmeansscreen2.png
+2. kmeansFINAL.py
+   kmeansFINAL.png
 3. c_means.py
 4. dbscan.py (сдал на паре)
 5. knp.py,
@@ -18,9 +17,9 @@
    НБА.png
 8. svm.py,
    svm.png
-9. LR.py 
+9. LR.py, 
    LR.png
 10. 
 11. GA.py
-12. HAAR.py
+12. HAAR.py,
     haar_res.png
