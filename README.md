@@ -20,3 +20,6 @@
    svm.png
 9. LR.py 
    LR.png
+10. 
+11. GA.py
+12. 
