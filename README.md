@@ -19,7 +19,7 @@
    svm.png
 9. LR.py, 
    LR.png
-10. 
+10. Покажу на паре
 11. GA.py
 12. HAAR.py,
     haar_res.png
