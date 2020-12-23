@@ -4,7 +4,7 @@ from sklearn import svm
 
 pygame.font.init()
 
-screen = pygame.display.set_mode((1080, 760))
+screen = pygame.display.set_mode((1000, 600))
 screen.fill((255, 255, 255))
 
 data = np.empty((0, 5), dtype='f')
@@ -51,27 +51,21 @@ while running:
                 model = svm.SVC(kernel='linear', C=1.0)
                 model.fit(points, clusters)
 
+                m = model.coef0
+
                 W = model.coef_[0]
                 I = model.intercept_
 
-                xy = np.zeros((3, 2))
-                xy[0][0] = -(I[0] / W[1])
-                xy[0][1] = (I[0] / W[1]) / (-W[0] / W[1])
+                n = -W[0] / W[1]
+                xx = np.linspace(0, 1000, 1000)
+                yy = n * xx - I[0] / W[1]
 
-                xy[1][0] = 1 / W[1] - (I[0] / W[1])
-                xy[1][1] = 1 / W[0] + (I[0] / W[1]) / (-W[0] / W[1])
-
-                xy[2][0] = -1 / W[1] - (I[0] / W[1])
-                xy[2][1] = -1 / W[0] + (I[0] / W[1]) / (-W[0] / W[1])
-
-                pygame.draw.aaline(screen, (0, 0, 0), [0, xy[2][0]], [xy[2][1], 0])
-                pygame.draw.aaline(screen, (0, 0, 0), [0, xy[1][0]], [xy[1][1], 0])
-
-                pygame.draw.line(screen, (255, 0, 0), [0, xy[0][0]], [xy[0][1], 0], 2)
-
+                pygame.draw.line(screen, (0, 0, 0), (xx[0], yy[0]), (xx[-1], yy[-1]), 2)
                 pygame.display.update()
 
         draw_circle()
         pygame.display.flip()
 
 pygame.quit()
+
+
