@@ -2,6 +2,7 @@ import plotly.graph_objects as gro
 import numpy as np
 from sklearn.svm import SVC
 from sklearn.cluster import KMeans
+from sklearn.linear_model import LogisticRegression
 
 n = 100
 x = np.random.randint(0, 100, n)
@@ -19,7 +20,7 @@ for i in range(n):
 
 fig = gro.Figure(data=[gro.Scatter3d(x=x, y=y, z=z, mode='markers', marker=dict(color=colors))])
 
-# fig.show()
+# fig.draw()
 
 x_new = np.random.randint(0, 100)
 y_new = np.random.randint(0, 100)
@@ -29,10 +30,13 @@ points.append([x_new, y_new, z_new])
 
 fig.add_trace(gro.Scatter3d(x=x, y=y, z=z, mode='markers', marker=dict(color=colors)))
 
-svc = SVC(kernel='linear')
-svc.fit(points[:n], clusters)
+# svc = SVC(kernel='linear')
+# svc.fit(points[:n], clusters)
+lr = LogisticRegression()
+model = lr.fit(points, clusters)
 
-zz = lambda x, y: (-svc.intercept_[0] - svc.coef_[0][0] * x - svc.coef_[0][1] * y) / svc.coef_[0][2]
+# zz = lambda x, y: (-svc.intercept_[0] - svc.coef_[0][0] * x - svc.coef_[0][1] * y) / svc.coef_[0][2]
+zz = lambda x, y: (-model.intercept_[0] - model.coef_[0][0] * x - model.coef_[0][1] * y) / model.coef_[0][2]
 
 tmp = np.linspace(0, 100, 50)
 xx, yx = np.meshgrid(tmp, tmp)
